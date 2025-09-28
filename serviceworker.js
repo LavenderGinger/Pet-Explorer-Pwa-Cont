@@ -1,16 +1,15 @@
 const CACHE_NAME = 'pet-explorer-cache-v1';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/about.html',
-  '/contact.html',
-  '/materialize-v1.0.0/materialize/css/materialize.min.css',
-  '/materialize-v1.0.0/materialize/js/materialize.min.js',
-  '/images/pexels-chevanon-1108099.jpg',
-  '/images/pexels-crisdip-35358-128756.jpg',
-  '/images/pexels-frans-van-heerden-201846-1463295.jpg',
+  'index.html',
+  'about.html',
+  'contact.html',
+  'materialize-v1.0.0/materialize/css/materialize.min.css',
+  'materialize-v1.0.0/materialize/js/materialize.min.js',
+  'images/pexels-chevanon-1108099.jpg',
+  'images/pexels-crisdip-35358-128756.jpg',
+  'images/pexels-frans-van-heerden-201846-1463295.jpg',
   'images/pexels-photo4passion-1828874.jpg',
-  '/images/pexels-pixabay-372166.jpg',
+  'images/pexels-pixabay-372166.jpg',
   'images/pexels-vika-glitter-392079-18011803.jpg'
 ];
 
