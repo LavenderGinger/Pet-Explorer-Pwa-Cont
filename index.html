@@ -139,7 +139,7 @@
   </footer>
 
   <!-- Materialize JS -->
-  <script src="/materialize-v1.0.0/materialize/js/materialize.min.js"></script>
+  <script src="Pet-Explorer-Pwa/materialize-v1.0.0/materialize/js/materialize.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       var elems = document.querySelectorAll('.sidenav');
@@ -149,7 +149,7 @@
   <script>
     if ('serviceWorker' in navigator)
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/serviceworker.js')
+      navigator.serviceWorker.register('serviceworker.js')
         .then(() => console.log('Service Worker registered'))
         .catch(err => console.error('Service Worker registration failed:', err));
     });
