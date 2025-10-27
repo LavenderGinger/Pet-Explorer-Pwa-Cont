@@ -1,6 +1,5 @@
 const CACHE_NAME = 'pet-explorer-cache-v1';
 const urlsToCache = [
-  '/',
   'index.html',
   'about.html',
   'contact.html',
