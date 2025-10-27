@@ -48,13 +48,21 @@
   <main>
     <div class="container section">
       <h4 class="center-align">Featured Pets</h4>
+      <div class="input-field">
+        <i class="material-icons prefix">search</i>
+        <input id="search" type="text" placeholder="Search pets..." autocomplete="off" />
+      </div>
       <div class="row">
 
         <div class="col s12">
-          <div class="card">
+          <div class="card hoverable">
             <div class="card-image">
-              <img src="images/pexels-chevanon-1108099.jpg" alt="Dog" class="responsive-img" loading="lazy" />
-              <span class="card-title">Dog</span>
+              <a href="dog.html">
+                <img src="images/pexels-chevanon-1108099.jpg" alt="Dog" class="responsive-img" />
+              </a>
+              <a href="dog.html">
+                <span class="card-title">Dog</span>
+              </a>
             </div>
             <div class="card-content">
               <p>Dogs are friendly and loyal companions available in many breeds, known for their playful nature and ability to form strong bonds with their owners. They often require regular exercise and social interaction to stay happy and healthy.</p>
@@ -66,8 +74,12 @@
         <div class="col s12">
           <div class="card">
             <div class="card-image">
+              <a href="cat.html">
               <img src="images/pexels-photo4passion-1828874.jpg" alt="Cat" class="responsive-img" loading="lazy" />
+              </a>
+              <a href="cat.html">
               <span class="card-title">Cat</span>
+            </a>
             </div>
             <div class="card-content">
               <p>Cats are independent and playful pets with unique personalities. They are known for their agility and curiosity and can be affectionate companions while also enjoying their alone time.</p>
@@ -79,8 +91,12 @@
         <div class="col s12">
           <div class="card">
             <div class="card-image">
+              <a href="rabbit.html">
               <img src="images/pexels-pixabay-372166.jpg" alt="Rabbit" class="responsive-img" loading="lazy" />
+              </a>
+              <a href="rabbit.html">
               <span class="card-title">Rabbit</span>
+              </a>
             </div>
             <div class="card-content">
               <p>Rabbits are gentle and soft creatures perfect for indoor habitats. They enjoy social interaction, require space to hop around, and thrive in environments that provide hiding places and chew toys.</p>
@@ -92,8 +108,12 @@
         <div class="col s12">
           <div class="card">
             <div class="card-image">
+              <a href="guineapig.html">
               <img src="images/pexels-vika-glitter-392079-18011803.jpg" alt="Guinea Pig" class="responsive-img" loading="lazy" />
+              </a>
+              <a href="guineapig.html">
               <span class="card-title">Guinea Pig</span>
+              </a>
             </div>
             <div class="card-content">
               <p>Guinea pigs are social and vocal pets that are easy to care for. They communicate with a variety of sounds, enjoy company, and need balanced diets with fresh vegetables and hay.</p>
@@ -105,8 +125,12 @@
         <div class="col s12">
           <div class="card">
             <div class="card-image">
+              <a href="parakeet.html">
               <img src="images/pexels-frans-van-heerden-201846-1463295.jpg" alt="Parakeet" class="responsive-img" loading="lazy" />
+              </a>
+              <a href="parakeet.html">
               <span class="card-title">Parakeet</span>
+              </a>
             </div>
             <div class="card-content">
               <p>Parakeets are colorful and intelligent birds capable of mimicking sounds and human speech. They require mental stimulation, social interaction, and a spacious cage to maintain their wellbeing.</p>
@@ -118,8 +142,12 @@
         <div class="col s12">
           <div class="card">
             <div class="card-image">
+              <a href="fish.html">
               <img src="images/pexels-crisdip-35358-128756.jpg" alt="Fish" class="responsive-img" loading="lazy" />
+              </a>
+              <a href="fish.html">
               <span class="card-title">Fish</span>
+              </a>
             </div>
             <div class="card-content">
               <p>Fish are low-maintenance aquatic pets requiring clean water, proper tank care, and a well-regulated environment. They come in a variety of species, providing peaceful and visually appealing companionship.</p>
@@ -127,9 +155,17 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
+
+      <div class="section center-align" style="margin-top: 20px;">
+        <p>
+          Don't know which pet is best? 
+          <a href="./petquiz.html" class="btn blue waves-effect waves-light" style="margin-left: 8px;">
+            Take the Quiz
+          </a>
+        </p>
+      </div>
   </main>
 
   <footer class="page-footer #1976d2 blue darken-2">
@@ -154,5 +190,36 @@
         .catch(err => console.error('Service Worker registration failed:', err));
     });
   </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.querySelector('#search');
+    if (searchInput) {
+      searchInput.addEventListener('input', () => {
+        const query = searchInput.value.toLowerCase();
+        document.querySelectorAll('.card').forEach(card => {
+          const title = card.querySelector('.card-title').textContent.toLowerCase();
+          card.style.display = title.includes(query) ? '' : 'none';
+        });
+      });
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Initialize sidenav normally
+    var elems = document.querySelectorAll('.sidenav');
+    M.Sidenav.init(elems, {edge: 'left', draggable: true});
+
+    // Highlight the active nav link
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('nav a').forEach(link => {
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+        link.style.fontWeight = 'bold';
+        link.style.color = '#ffffff'; // White for contrast
+      }
+    });
+  });
+</script>
 </body>
 </html>

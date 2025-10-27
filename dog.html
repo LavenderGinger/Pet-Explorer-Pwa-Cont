@@ -3,11 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pet Explorer PWA</title>
+  <title>Contact - Pet Explorer</title>
 
-  <!-- Google Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <!-- Materialize CSS -->
   <link rel="stylesheet" href="materialize-v1.0.0/materialize/css/materialize.min.css" />
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#00CCFF" />
@@ -19,12 +17,12 @@
     <div class="nav-wrapper #2196f3 blue">
       <a href="index.html" class="brand-logo center">Pet Explorer</a>
 
-      <!-- Hamburger for mobile -->
+      <!-- Hamburger menu icon for medium and small screens -->
       <a href="#" data-target="mobile-menu" class="sidenav-trigger right hide-on-med-and-up black-text">
         <i class="material-icons">menu</i>
       </a>
 
-      <!-- Desktop Menu -->
+      <!-- Desktop menu -->
       <ul class="right hide-on-small-and-down">
         <li><a href="index.html" class="grey-text text-darken-4">Home</a></li>
         <li><a href="about.html" class="grey-text text-darken-4">About</a></li>
@@ -33,7 +31,7 @@
     </div>
   </nav>
 
-  <!-- Mobile Side Navigation -->
+  <!-- Mobile side navigation -->
   <ul class="sidenav" id="mobile-menu">
     <li class="subheader">Pet Explorer</li>
     <li><a href="index.html" class="grey-text text-darken-4">Home</a></li>
@@ -45,17 +43,26 @@
     </li>
   </ul>
 
-  <main>
-  <div class="container section">
-    <h4>About Pet Explorer</h4>
-    <p>
-      Pet Explorer is your go-to resource for discovering and learning about a variety of pets. Whether you're a pet owner or a pet enthusiast, our goal is to provide comprehensive information to help you take care of your beloved companions.
-    </p>
-    <p>
-      We feature detailed guides, care tips, and fun facts about common pets like dogs, cats, rabbits, guinea pigs, parakeets, and more. We are committed to making pet care accessible and enjoyable for everyone.
-    </p>
-  </div>
-</main>
+  <main class="container section">
+    <div class="card">
+      <div class="card-image">
+        <img src="images/pexels-chevanon-1108099.jpg" alt="Dog" class="responsive-img" />
+      </div>
+      <div class="card-content">
+        <h4>Dog</h4>
+        <p>Dogs are friendly, loyal companions that come in hundreds of breeds, colors, and personalities. They bring affection and joy to their families while requiring daily exercise, training, and socialization.</p>
+        <ul>
+          <li><strong>Lifespan:</strong> 10–13 years</li>
+          <li><strong>Diet:</strong> Omnivore</li>
+          <li><strong>Temperament:</strong> Loyal, social, active</li>
+        </ul>
+      </div>
+      <div class="card-action">
+        <a href="index.html" class="blue-text text-darken-2"><i class="material-icons left">arrow_back</i> Back to Home</a>
+      </div>
+    </div>
+  </main>
+
   <footer class="page-footer #1976d2 blue darken-2">
     <div class="container center-align">
       © 2025 Pet Explorer. All rights reserved.
@@ -82,16 +89,6 @@
     // Initialize sidenav normally
     var elems = document.querySelectorAll('.sidenav');
     M.Sidenav.init(elems, {edge: 'left', draggable: true});
-
-    // Highlight the active nav link
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('nav a').forEach(link => {
-      if (link.getAttribute('href') === currentPage) {
-        link.classList.add('active');
-        link.style.fontWeight = 'bold';
-        link.style.color = '#ffffff'; // White for contrast
-      }
-    });
   });
 </script>
 </body>

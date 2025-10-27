@@ -1,9 +1,15 @@
 {
   "name": "Pet Explorer",
   "short_name": "PetExplorer",
-  "start_url": "index.html",
+  "description": "Discover and learn about pets through the Pet Explorer app.",
+  "start_url": "/index.html",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#00CCFF",
   "theme_color": "#00CCFF",
+  "dir": "ltr",
+  "lang": "en-US",
   "icons": [
     {
       "src": "android/android-launchericon-192-192.png",
@@ -19,6 +25,22 @@
       "src": "ios/180.png",
       "sizes": "180x180",
       "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Featured Pets",
+      "short_name": "Pets",
+      "description": "Browse featured pets",
+      "url": "/index.html",
+      "icons": [{ "src": "android/android-launchericon-192-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Contact Us",
+      "short_name": "Contact",
+      "description": "Get in touch with us",
+      "url": "/contact.html",
+      "icons": [{ "src": "ios/180.png", "sizes": "180x180" }]
     }
   ]
 }

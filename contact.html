@@ -85,5 +85,22 @@
         .catch(err => console.error('Service Worker registration failed:', err));
     });
   </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Initialize sidenav normally
+    var elems = document.querySelectorAll('.sidenav');
+    M.Sidenav.init(elems, {edge: 'left', draggable: true});
+
+    // Highlight the active nav link
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('nav a').forEach(link => {
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+        link.style.fontWeight = 'bold';
+        link.style.color = '#ffffff';
+      }
+    });
+  });
+</script>
 </body>
 </html>
