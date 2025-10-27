@@ -45,8 +45,23 @@ self.addEventListener('activate', event => {
 // Fetch event - serve cached assets if offline
 self.addEventListener('fetch', event => {
   event.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request);
-    })
+    (async () => {
+      if (event.request.method !== 'GET') {
+        return fetch(event.request);
+      }
+      const cachedResponse = await caches.match(event.request);
+      if (cachedResponse) {
+        return cachedResponse;
+      }
+      try {
+        const networkResponse = await fetch(event.request);
+        const cache = await caches.open(CACHE_NAME);
+        cache.put(event.request, networkResponse.clone());
+        return networkResponse;
+      } catch (error) {
+        console.error('Fetch failed; returning offline page instead.', error);
+        return caches.match('./offline.html');
+      }
+    })()
   );
 });
