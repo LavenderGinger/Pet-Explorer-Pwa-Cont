@@ -11,8 +11,8 @@ const urlsToCache = [
   'rabbit.html',
   'offline.html',
   'petquiz.html',
-  'materialize-v1.0.0/materialize/css/materialize.min.css',
-  'materialize-v1.0.0/materialize/js/materialize.min.js',
+  'css/materialize-v1.0.0/materialize/css/materialize.min.css',
+  'js/materialize-v1.0.0/materialize/js/materialize.min.js',
   'images/pexels-chevanon-1108099.jpg',
   'images/pexels-crisdip-35358-128756.jpg',
   'images/pexels-frans-van-heerden-201846-1463295.jpg',
@@ -67,7 +67,7 @@ self.addEventListener('fetch', event => {
         return networkResponse;
       } catch (error) {
         console.error('Fetch failed; returning offline page instead.', error);
-        return caches.match('offline.html');
+        return caches.match('./offline.html');
       }
     })()
   );
