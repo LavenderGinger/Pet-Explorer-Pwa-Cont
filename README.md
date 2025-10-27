@@ -39,4 +39,3 @@ How to Run the Project:
     Test offline by loading once, then disabling network and refreshing.
 
     Try installing the PWA via browser install prompt or manual Add to Home Screen.
-
