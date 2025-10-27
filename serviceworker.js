@@ -67,7 +67,7 @@ self.addEventListener('fetch', event => {
         return networkResponse;
       } catch (error) {
         console.error('Fetch failed; returning offline page instead.', error);
-        return caches.match('./offline.html');
+        return caches.match('offline.html');
       }
     })()
   );
